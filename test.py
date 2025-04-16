@@ -50,7 +50,7 @@ def test(dataloader, model, args, device = 'cuda', name = "training", main = Fal
         # 如果是主训练过程，进行特征可视化
         if main:
             feats = np.array(feats)  # 转换为numpy数组
-            fit = umap.UMAP(random_state=42)  # 使用UMAP进行降维
+            fit = umap.UMAP()  # 使用UMAP进行降维
             reduced_feats = fit.fit_transform(feats)  # 降维到2D
             labels = np.array(labels)  # 转换标签为numpy数组
             plt.figure()  # 创建新的图形

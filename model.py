@@ -1,6 +1,6 @@
 import torch
 from torch import nn
-from utils import FeedForward, FOCUS
+from utils import FeedForward, DECOUPLED
 from performer_pytorch import Performer
 
 # 注意力模块
@@ -44,8 +44,8 @@ class ConvBlock(nn.Module):
         self.norm1 = nn.LayerNorm(dim)
         # 第二个归一化层
         self.norm2 = nn.LayerNorm(dim)
-        # FOCUS 卷积操作
-        self.conv = FOCUS(dim, heads)
+        # DECOUPLED 卷积操作
+        self.conv = DECOUPLED(dim, heads)
         # 前馈神经网络
         self.ff = FeedForward(dim, ff_mult, dropout)
 

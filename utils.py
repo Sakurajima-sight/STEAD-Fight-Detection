@@ -59,7 +59,7 @@ def FeedForward(dim, repe = 4, dropout=0.):
     )
 
 # 多头关系聚合模块（MHRAs）
-class FOCUS(nn.Module):
+class DECOUPLED(nn.Module):
     def __init__(
         self,
         dim,

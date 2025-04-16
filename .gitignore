@@ -1,0 +1,5 @@
+X3D_Videos/
+__pycache__/
+ckpt/
+*.mp4
+*.npy
