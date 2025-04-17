@@ -22,7 +22,8 @@ import random
 def save_config(save_path):
     path = save_path + '/'
     os.makedirs(path, exist_ok=True)  # 如果目录不存在则创建
-    f = open(path + "config_{}.txt".format(datetime.datetime.now()), 'w')  # 创建配置文件
+    timestamp = datetime.datetime.now().strftime("%Y-%m-%d_%H-%M-%S")  # 将冒号替换为下划线
+    f = open(path + "config_{}.txt".format(timestamp), 'w')
     for key in vars(args).keys():
         f.write('{}: {}'.format(key, vars(args)[key]))  # 写入每个参数
         f.write('\n')
